@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "securitymcp-ollama"
+version = "0.2.0"
+description = "Native Ollama API client and authenticated HTTP API for SecurityMCP"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28,<1", "mcp>=1.30.0,<2", "fastapi>=0.141.1,<1",
+    "uvicorn>=0.53.0,<1", "prompt-toolkit>=3.0.51,<4",
+    "python-dotenv>=1.1.0,<2", "jsonschema>=4.26.0,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "pytest-asyncio>=1,<2", "httpx>=0.28,<1"]
+
+[tool.setuptools]
+packages = ["core"]
+py-modules = ["main", "api", "mcp_client", "mcp_server"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
