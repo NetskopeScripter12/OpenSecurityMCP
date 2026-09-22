@@ -12,7 +12,7 @@ Install [Ollama](https://ollama.com/download) and Python 3.11 or newer. Start th
 ollama pull qwen3:8b
 ```
 
-Extract this folder, open a terminal inside it, and run:
+Extract this folder (you MUST use the .zip file), open a terminal inside it, and run:
 
 ```bash
 python -m venv .venv
